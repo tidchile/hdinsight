@@ -34,7 +34,7 @@ validateUsernameAndPassword() {
 }
 
 updateAmbariConfigs() {
-  updateResult=$(bash $AMBARICONFIGS_SH -u $USERID -p $PASSWD set $ACTIVEAMBARIHOST $CLUSTERNAME core-site "hadoop.proxyuser.oozie.groups" "*")
+  updateResult=$(bash $AMBARICONFIGS_SH -u $USERID -p $PASSWD set $ACTIVEAMBARIHOST $CLUSTERNAME core-site $1 $2)
   if [[ $updateResult != *"Tag:version"* ]] && [[ $updateResult == *"[ERROR]"* ]]; then
     echo "[ERROR] Failed to update core-site. Exiting!"
     echo $updateResult
