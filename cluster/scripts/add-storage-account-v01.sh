@@ -39,7 +39,7 @@ updateAmbariConfigs() {
     echo "[ERROR] Failed to update core-site. Exiting!"
     echo $updateResult
     exit 135
-  #fi
+  fi
   echo "Added $1 = $2"
 }
 
