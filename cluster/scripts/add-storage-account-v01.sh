@@ -166,7 +166,7 @@ validateUsernameAndPassword
 
 args=("$@")
 ARG_LEN=${#args[@]}
-if [ "${args[$ARG_LEN-1]}" == "-p" ]
+if (( $ARG_LEN>0 )) && [ "${args[$ARG_LEN-1]}" == "-p" ]
   then
     DISABLEENCRYPTION=true
     KEYPROVIDER=SimpleKeyProvider
